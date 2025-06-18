@@ -1,0 +1,6 @@
+@AirWaterStore.API_HostAddress = http://localhost:5246
+
+GET {{AirWaterStore.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
