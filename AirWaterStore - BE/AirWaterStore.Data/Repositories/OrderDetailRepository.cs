@@ -20,7 +20,7 @@ namespace AirWaterStore.Data.Repositories
         {
             return await _context.OrderDetails
                 .Where(x => x.OrderId == orderId)
-                .Include(x => x.Game)
+                //.Include(x => x.Game)
                 .OrderBy(m => m.OrderDetailId)
                 .ToListAsync();
         }

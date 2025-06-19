@@ -19,7 +19,7 @@ namespace AirWaterStore.Data.Repositories
         public async Task<List<Order>> GetAllAsync(int pageNumber = 1, int pageSize = 10)
         {
             return await _context.Orders
-                .Include(m => m.OrderDetails)
+                //.Include(m => m.OrderDetails)
                 .OrderByDescending(m => m.OrderDate)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
@@ -30,7 +30,7 @@ namespace AirWaterStore.Data.Repositories
         {
             return await _context.Orders
                 .Where(o => o.UserId == userId)
-                .Include(m => m.OrderDetails)
+                //.Include(m => m.OrderDetails)
                 .OrderByDescending(m => m.OrderDate)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
@@ -40,7 +40,7 @@ namespace AirWaterStore.Data.Repositories
         public async Task<Order> GetByIdAsync(int orderId)
         {
             return await _context.Orders
-                .Include(m => m.OrderDetails)
+                //.Include(m => m.OrderDetails)
                 .FirstOrDefaultAsync(m => m.OrderId == orderId);
         }
 

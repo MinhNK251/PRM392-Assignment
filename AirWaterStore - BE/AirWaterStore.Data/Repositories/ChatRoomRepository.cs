@@ -20,7 +20,7 @@ namespace AirWaterStore.Data.Repositories
         public async Task<ChatRoom> GetOrCreateChatRoomAsync(int customerId)
         {
             var existing = await _context.ChatRooms
-                .Include(c => c.Messages)
+                //.Include(c => c.Messages)
                 .FirstOrDefaultAsync(c => c.CustomerId == customerId);
 
             if (existing != null)
@@ -41,7 +41,7 @@ namespace AirWaterStore.Data.Repositories
         public async Task<ChatRoom?> GetChatRoomByIdAsync(int chatRoomId)
         {
             return await _context.ChatRooms
-                .Include(c => c.Messages)
+                //.Include(c => c.Messages)
                 .FirstOrDefaultAsync(c => c.ChatRoomId == chatRoomId);
         }
 
