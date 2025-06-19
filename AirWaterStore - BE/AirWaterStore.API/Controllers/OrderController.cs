@@ -69,7 +69,7 @@ namespace AirWaterStore.API.Controllers
                 Status = dto.Status,
             };
             await _orderService.AddAsync(order);
-            return CreatedAtAction(nameof(GetByIdAsync), new { orderId = order.OrderId }, order);
+            return Ok(order);
         }
 
         // PUT: api/order/5

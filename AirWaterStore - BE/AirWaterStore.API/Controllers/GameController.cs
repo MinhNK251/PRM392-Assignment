@@ -57,7 +57,7 @@ namespace AirWaterStore.API.Controllers
                 Quantity = dto.Quantity
             };
             await _gameService.AddAsync(game);
-            return CreatedAtAction(nameof(GetByIdAsync), new { gameId = game.GameId }, game);
+            return Ok(game);
         }
 
         // PUT: api/Game/5
